@@ -3,7 +3,7 @@ package rpcGame;
 import java.util.Random;
 import java.util.Scanner;
 
-class RockPaperScissors
+class RockPaperScissors   
 {
     private int User_Winner = 0;
     private int Computer_Winner = 0;
@@ -11,7 +11,9 @@ class RockPaperScissors
     private int GAME = 1;
     private Random rand = new Random();
     private Scanner sc = new Scanner(System.in);
-    public static void main(String[] args) 
+    
+    
+    public static void main(String[] args)    //Main class
     {
         greeting();
         RockPaperScissors rps = new RockPaperScissors();
@@ -43,7 +45,7 @@ class RockPaperScissors
         
     }
 
-    public static void greeting()
+    public static void greeting()   // Function Used to speak with User about Game Rules
     {
         System.out.println("Welcome to the Rock./.Paper./.Scissor Game\n---------------------------------------------\n");
         System.out.println("Here are the rules of the game.");
@@ -57,7 +59,7 @@ class RockPaperScissors
       
     }
 
-    public void playRound()
+    public void playRound()       //Function used to track wins and losses
     {
         System.out.println("\nGame "+GAME+": \n");
         int User_Choice = UserChoice();
@@ -69,13 +71,13 @@ class RockPaperScissors
         }else if(ChoiceBattle==Computer_Choice)
         {
             Computer_Winner++;
-        }else if(ChoiceBattle==0)
+        }else if(ChoiceBattle == 0)
         {
             Tie++;
         }
         GAME++;
     }
-    public int choiceBattle(int p1,int p2)
+    public int choiceBattle(int p1,int p2)    //Function Used to determine who won the game
     {
         if(p1==1&&p2==2)
         {
@@ -135,7 +137,7 @@ class RockPaperScissors
         
         
     }
-    int ComputerChoice()
+    int ComputerChoice()    // Randomize computer choice from 1 - 3
     {
         
         int min =1;
@@ -143,7 +145,7 @@ class RockPaperScissors
         int number = (rand.nextInt(max-min)+min);
         return number;
     }
-    int UserChoice()
+    int UserChoice()	
     {
         System.out.print("|Make a choice|  [1-Rock, 2-Paper, 3-Scissor] : ");
         int User_Choice = sc.nextInt();
